@@ -69,7 +69,7 @@ class SellAll extends PluginBase{
                 }
 				if(isset($args[0])){
 				    switch(strtolower($args[0])){
-                        case "hand":
+                        case "9854985434":
                             $item = $sender->getInventory()->getItemInHand();
                             if(isset($this->cfg[$item->getID().":".$item->getDamage()])){
                                 $price = $this->cfg[$item->getID().":".$item->getDamage()];
@@ -195,7 +195,7 @@ class SellAll extends PluginBase{
                             if(array_key_exists($args[0], $this->cfg["groups"])){
                                 $group = $this->cfg["groups"][$args[0]];
 
-                                $inv = $sender->getInventory()->getContents();
+                                $hand = $sender->getInventory()->getContents();
                                 $revenue = 0;
                                 foreach($inv as $item){
                                     if(isset($this->cfg[$item->getID()])){
@@ -235,7 +235,7 @@ class SellAll extends PluginBase{
 
 	public function listArguments() : string{
 	    $seperator = $this->msg["separator"];
-	    $args = "hand".$seperator."all".$seperator."inv";
+	    $args = "hand".$seperator."all";
 	    foreach($this->cfg["groups"] as $name => $group){
 	        $args = $args.$seperator.$name;
         }
