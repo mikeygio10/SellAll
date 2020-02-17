@@ -9,9 +9,8 @@ depend: ["EconomyAPI"]
 
 commands:
  sell:
-  aliases: [changablesell, cs, chs, cse]
-  description: "§bChangableSell §fOpen"
-  usage: "/changablesell|/cs all|hand|inventory"
+  description: "Sell your items"
+  usage: "/sell all|hand|inventory"
   permission: sellall.command
 
 permissions:
